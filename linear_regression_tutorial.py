@@ -1,6 +1,8 @@
 """
 Tutorial: Linear Regression + Feature Engineering Pipeline (scikit-learn)
 =========================================================================
+Readable version: TUTORIAL.md (start there). This file is the runnable
+version of exactly the same content.
 Topics:
   1. Linear Regression theory (in comments)
   2. Encoding (OneHot, Ordinal)

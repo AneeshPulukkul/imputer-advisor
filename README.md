@@ -11,10 +11,12 @@ the advisor at your own data.
 
 ## Quickstart tutorial (start here)
 
-`linear_regression_tutorial.py` is a hands-on, 10-minute tutorial that teaches
-**Linear Regression** by building a complete **feature engineering pipeline**
-in scikit-learn — including a fair head-to-head comparison of **KNN vs MICE
-imputation**.
+A hands-on, 10-minute tutorial that teaches **Linear Regression** by building
+a complete **feature engineering pipeline** in scikit-learn — including a fair
+head-to-head comparison of **KNN vs MICE imputation**.
+
+- 📖 **Read it:** [`TUTORIAL.md`](TUTORIAL.md)
+- ▶️ **Run it:** `linear_regression_tutorial.py` (same content, executable)
 
 ## What you will learn
 
@@ -80,7 +82,10 @@ Pipeline([
 
 ```text
 .
-├── linear_regression_tutorial.py  # the full tutorial (read + run this)
+├── TUTORIAL.md                    # the tutorial, readable (start here)
+├── linear_regression_tutorial.py  # the tutorial, runnable (run this)
+├── USER_GUIDE.md                  # adoption walkthrough with screenshots
+├── docs/screenshots/              # UI + API screenshots used by the guide
 ├── imputer_advisor.py             # intelligent imputer recommender (simple/knn/mice)
 ├── benchmark_imputers.py          # 4-dataset experiment harness
 ├── test_imputer_advisor.py        # 7 tests, no pytest needed
