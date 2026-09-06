@@ -5,6 +5,10 @@ from your data's characteristics — plus the tutorial, benchmark, API, and UI
 around it. **New here? Start with the Quickstart tutorial below**, then point
 the advisor at your own data.
 
+> 📖 **Adopting this project? Read [`USER_GUIDE.md`](USER_GUIDE.md)** — run it
+> with Docker or natively, click through your first recommendation (with
+> screenshots), and find troubleshooting + FAQ.
+
 ## Quickstart tutorial (start here)
 
 `linear_regression_tutorial.py` is a hands-on, 10-minute tutorial that teaches
