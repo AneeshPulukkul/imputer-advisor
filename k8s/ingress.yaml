@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: imputer-advisor
+  namespace: imputer-advisor
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: advisor.local # point DNS / /etc/hosts at your ingress controller
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend: { service: { name: backend, port: { number: 8000 } } }
+          - path: /
+            pathType: Prefix
+            backend: { service: { name: frontend, port: { number: 80 } } }

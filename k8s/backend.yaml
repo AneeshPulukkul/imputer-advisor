@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: imputer-advisor
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: backend }
+  template:
+    metadata:
+      labels: { app: backend }
+    spec:
+      containers:
+        - name: backend
+          image: imputer-advisor-backend:latest # set to your registry image
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DATABASE_URL
+              value: "postgresql+psycopg2://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@postgres:5432/$(POSTGRES_DB)"
+            - { name: POSTGRES_USER, valueFrom: { secretKeyRef: { name: postgres-credentials, key: user } } }
+            - { name: POSTGRES_PASSWORD, valueFrom: { secretKeyRef: { name: postgres-credentials, key: password } } }
+            - { name: POSTGRES_DB, valueFrom: { secretKeyRef: { name: postgres-credentials, key: db } } }
+            - { name: CORS_ORIGINS, value: "http://localhost:5173,http://localhost:8080" }
+          readinessProbe:
+            httpGet: { path: /health, port: 8000 }
+            periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: imputer-advisor
+spec:
+  selector: { app: backend }
+  ports:
+    - { port: 8000, targetPort: 8000 }

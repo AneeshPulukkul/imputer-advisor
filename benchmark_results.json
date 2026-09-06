@@ -1,0 +1,225 @@
+{
+  "A_diabetes_real": {
+    "characteristics": {
+      "n_samples": 442,
+      "n_features": 10,
+      "n_numeric": 10,
+      "n_categorical": 0,
+      "numeric_cols": [
+        "age",
+        "sex",
+        "bmi",
+        "bp",
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6"
+      ],
+      "categorical_cols": [],
+      "missing_rate_overall": 0.1079,
+      "max_col_missing": 0.1335,
+      "n_cols_with_missing": 10,
+      "mean_abs_corr": 0.2948,
+      "mean_abs_skew": 0.3983,
+      "numeric_fraction": 1.0,
+      "rows_per_feature": 44.2,
+      "scale_disparity": 1.08
+    },
+    "recommendation": {
+      "recommended": "mice",
+      "confidence": 0.78,
+      "scores": {
+        "simple": 40.0,
+        "knn": 50.0,
+        "mice": 67.0
+      },
+      "rationale": "Recommend IterativeImputer / MICE for n=442, 10 numeric + 0 categorical, missing=0.1079 (max-col=0.1335), mean|r|=0.2948. moderate correlation (mean|r|=0.2948): lean MICE | numeric-heavy: MICE applicable to most columns"
+    },
+    "cv_scores": {
+      "simple": {
+        "cv_rmse": 57.3734,
+        "cv_r2": 0.4292,
+        "fit_time_s": 0.04
+      },
+      "knn": {
+        "cv_rmse": 56.772,
+        "cv_r2": 0.4402,
+        "fit_time_s": 0.07
+      },
+      "mice": {
+        "cv_rmse": 56.2861,
+        "cv_r2": 0.4514,
+        "fit_time_s": 0.63
+      }
+    },
+    "cv_winner": "mice",
+    "advisor_gap_pct": 0.0,
+    "hit": true
+  },
+  "B_synthetic_correlated": {
+    "characteristics": {
+      "n_samples": 800,
+      "n_features": 6,
+      "n_numeric": 6,
+      "n_categorical": 0,
+      "numeric_cols": [
+        "x1",
+        "x2",
+        "x3",
+        "x4",
+        "x5",
+        "x6"
+      ],
+      "categorical_cols": [],
+      "missing_rate_overall": 0.1048,
+      "max_col_missing": 0.1175,
+      "n_cols_with_missing": 6,
+      "mean_abs_corr": 0.3071,
+      "mean_abs_skew": 0.1116,
+      "numeric_fraction": 1.0,
+      "rows_per_feature": 133.33,
+      "scale_disparity": 1.46
+    },
+    "recommendation": {
+      "recommended": "mice",
+      "confidence": 0.87,
+      "scores": {
+        "simple": 40.0,
+        "knn": 50.0,
+        "mice": 72.0
+      },
+      "rationale": "Recommend IterativeImputer / MICE for n=800, 6 numeric + 0 categorical, missing=0.1048 (max-col=0.1175), mean|r|=0.3071. moderate correlation (mean|r|=0.3071): lean MICE | numeric-heavy: MICE applicable to most columns"
+    },
+    "cv_scores": {
+      "simple": {
+        "cv_rmse": 1.023,
+        "cv_r2": 0.9529,
+        "fit_time_s": 0.03
+      },
+      "knn": {
+        "cv_rmse": 0.6379,
+        "cv_r2": 0.9817,
+        "fit_time_s": 0.08
+      },
+      "mice": {
+        "cv_rmse": 0.5523,
+        "cv_r2": 0.9863,
+        "fit_time_s": 0.42
+      }
+    },
+    "cv_winner": "mice",
+    "advisor_gap_pct": 0.0,
+    "hit": true
+  },
+  "C_synthetic_clustered": {
+    "characteristics": {
+      "n_samples": 900,
+      "n_features": 4,
+      "n_numeric": 4,
+      "n_categorical": 0,
+      "numeric_cols": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "categorical_cols": [],
+      "missing_rate_overall": 0.1008,
+      "max_col_missing": 0.1233,
+      "n_cols_with_missing": 4,
+      "mean_abs_corr": 0.1718,
+      "mean_abs_skew": 0.2296,
+      "numeric_fraction": 1.0,
+      "rows_per_feature": 225.0,
+      "scale_disparity": 2.81
+    },
+    "recommendation": {
+      "recommended": "mice",
+      "confidence": 0.67,
+      "scores": {
+        "simple": 40.0,
+        "knn": 50.0,
+        "mice": 60.0
+      },
+      "rationale": "Recommend IterativeImputer / MICE for n=900, 4 numeric + 0 categorical, missing=0.1008 (max-col=0.1233), mean|r|=0.1718. numeric-heavy: MICE applicable to most columns"
+    },
+    "cv_scores": {
+      "simple": {
+        "cv_rmse": 3.0315,
+        "cv_r2": 0.8668,
+        "fit_time_s": 0.03
+      },
+      "knn": {
+        "cv_rmse": 2.6804,
+        "cv_r2": 0.8948,
+        "fit_time_s": 0.07
+      },
+      "mice": {
+        "cv_rmse": 2.6477,
+        "cv_r2": 0.8974,
+        "fit_time_s": 0.23
+      }
+    },
+    "cv_winner": "mice",
+    "advisor_gap_pct": 0.0,
+    "hit": true
+  },
+  "D_mixed_housing": {
+    "characteristics": {
+      "n_samples": 800,
+      "n_features": 6,
+      "n_numeric": 4,
+      "n_categorical": 2,
+      "numeric_cols": [
+        "size",
+        "rooms",
+        "age",
+        "dist"
+      ],
+      "categorical_cols": [
+        "neigh",
+        "style"
+      ],
+      "missing_rate_overall": 0.0683,
+      "max_col_missing": 0.1163,
+      "n_cols_with_missing": 4,
+      "mean_abs_corr": 0.0204,
+      "mean_abs_skew": 0.9155,
+      "numeric_fraction": 0.6667,
+      "rows_per_feature": 133.33,
+      "scale_disparity": 211.18
+    },
+    "recommendation": {
+      "recommended": "mice",
+      "confidence": 0.55,
+      "scores": {
+        "simple": 40.0,
+        "knn": 40.0,
+        "mice": 43.0
+      },
+      "rationale": "Recommend IterativeImputer / MICE for n=800, 4 numeric + 2 categorical, missing=0.0683 (max-col=0.1163), mean|r|=0.0204. weak correlation (mean|r|=0.0204): MICE has little linear signal | huge scale disparity (max-std/min-std=211.18): KNN neighbors dominated by one column unless you scale first; demote KNN"
+    },
+    "cv_scores": {
+      "simple": {
+        "cv_rmse": 26293.0698,
+        "cv_r2": 0.8124,
+        "fit_time_s": 0.05
+      },
+      "knn": {
+        "cv_rmse": 27181.4864,
+        "cv_r2": 0.7987,
+        "fit_time_s": 0.08
+      },
+      "mice": {
+        "cv_rmse": 26207.808,
+        "cv_r2": 0.8136,
+        "fit_time_s": 0.08
+      }
+    },
+    "cv_winner": "mice",
+    "advisor_gap_pct": 0.0,
+    "hit": true
+  }
+}

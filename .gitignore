@@ -1,0 +1,12 @@
+# local env with secrets — never commit
+.env
+
+# python
+__pycache__/
+*.pyc
+*.db
+.venv/
+
+# frontend build + deps
+frontend/node_modules/
+frontend/dist/
